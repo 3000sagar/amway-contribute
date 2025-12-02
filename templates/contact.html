@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact Us | Amway Contribute{% endblock %}
+
+{% block content %}
+
+<!-- =================================================================== -->
+<!-- ⭐ GEN-Z HERO CONTACT HEADER -->
+<!-- =================================================================== -->
+
+<div class="relative w-full mb-14 rounded-[32px] overflow-hidden">
+
+    <!-- BACKGROUND -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/amway_banner.jpg' %}"
+             class="w-full h-full object-cover blur-xl opacity-40 scale-110">
+    </div>
+
+    <!-- GRADIENT OVERLAY -->
+    <div class="absolute inset-0 animate-gradientFlow 
+        bg-[radial-gradient(circle_at_top_left,rgba(255,0,200,0.4),transparent_60%),
+           radial-gradient(circle_at_bottom_right,rgba(0,200,255,0.35),transparent_60%)]
+        dark:bg-[radial-gradient(circle_at_top_left,rgba(255,0,200,0.25),transparent_70%),
+           radial-gradient(circle_at_bottom_right,rgba(0,200,255,0.25),transparent_70%)]">
+    </div>
+
+    <!-- PARTICLES -->
+    <div class="absolute inset-0 pointer-events-none">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="relative z-20 text-center py-14 sm:py-20 px-6">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white drop-shadow-xl mb-4">
+            Contact Us
+        </h1>
+        <p class="text-gray-800 dark:text-gray-200 text-lg max-w-2xl mx-auto">
+            We’re always here to help. Reach out anytime, and we’ll get back to you quickly.
+        </p>
+    </div>
+</div>
+
+
+<!-- =================================================================== -->
+<!-- ⭐ CONTACT CONTENT SECTION (GEN-Z STYLE) -->
+<!-- =================================================================== -->
+
+<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 px-4">
+
+    <!-- LEFT CARD -->
+    <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 relative overflow-hidden border border-gray-200 dark:border-gray-700">
+
+        <!-- Glow Element -->
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-400/10 to-blue-400/10 blur-2xl"></div>
+
+        <div class="relative z-10">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Reach Us</h2>
+
+            <p class="text-gray-700 dark:text-gray-300 mb-3">
+                <i class="fas fa-envelope text-blue-500 mr-2"></i>
+                Email:  
+                <a href="mailto:sagarhirulkar689@gmail.com" class="text-blue-600 dark:text-blue-400 font-semibold">
+                    sagarhirulkar689@gmail.com
+                </a>
+            </p>
+
+            <p class="text-gray-700 dark:text-gray-300 mb-3">
+                <i class="fas fa-phone text-green-500 mr-2"></i>
+                Phone:  
+                <span class="font-semibold">+91 XXXXXXXXXX</span>
+            </p>
+
+            <p class="text-gray-700 dark:text-gray-300 mb-3">
+                <i class="fas fa-location-dot text-red-500 mr-2"></i>
+                Address:  
+                <span class="font-semibold">
+                    Nagpur, Maharashtra, India
+                </span>
+            </p>
+
+            <div class="mt-6 flex gap-4 text-2xl text-gray-700 dark:text-gray-300">
+                <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-sky-500 transition"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:sagarhirulkar689@gmail.com" class="hover:text-yellow-500 transition"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="hover:text-red-600 transition"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- RIGHT CARD -->
+    <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
+        <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">About Amway Contribute</h2>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            Amway Contribute is built to help people explore premium nutrition, beauty, personal care,
+            and home & living solutions with clarity and confidence.
+        </p>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            Our goal is to simplify product discovery by providing clean visuals, detailed breakdowns,
+            and curated insights for every Amway product.
+        </p>
+
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Feel free to get in touch—we're happy to help!
+        </p>
+    </div>
+
+</div>
+
+
+<!-- =================================================================== -->
+<!-- ⭐ PARTICLE & GRADIENT ANIMATIONS -->
+<!-- =================================================================== -->
+<style>
+@keyframes floatParticle {
+    0% { transform: translateY(0) scale(1); opacity: 0.4; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 0.8; }
+    100% { transform: translateY(0) scale(1); opacity: 0.4; }
+}
+
+.particle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: floatParticle 4s infinite ease-in-out;
+}
+
+.particle:nth-child(1) { top: 20%; left: 12%; animation-duration: 5s; }
+.particle:nth-child(2) { top: 65%; left: 30%; animation-duration: 6s; }
+.particle:nth-child(3) { top: 40%; left: 70%; animation-duration: 7s; }
+.particle:nth-child(4) { top: 80%; left: 50%; animation-duration: 5.5s; }
+
+@keyframes gradientFlow {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-gradientFlow {
+    animation: gradientFlow 8s ease-in-out infinite;
+}
+</style>
+
+{% endblock %}

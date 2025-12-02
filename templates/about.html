@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | Amway Contribute{% endblock %}
+
+{% block content %}
+
+<!-- PAGE CONTAINER -->
+<div class="w-full max-w-5xl mx-auto py-10 px-4">
+
+    <!-- ============================== -->
+    <!-- PAGE HEADER HERO -->
+    <!-- ============================== -->
+    <div class="relative w-full rounded-[28px] overflow-hidden mb-14">
+
+        <!-- Gradient background -->
+        <div class="absolute inset-0 bg-gradient-to-r 
+                    from-purple-600/70 via-pink-500/60 to-blue-500/70
+                    dark:from-purple-700/70 dark:via-pink-600/60 dark:to-blue-600/70
+                    blur-xl opacity-70">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 p-10 sm:p-16">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-xl mb-4">
+                About Amway Contribute
+            </h1>
+            <p class="text-white/90 text-lg max-w-2xl leading-relaxed">
+                A modern platform designed to empower Amway business owners with premium, 
+                high-quality visuals, product insights, and marketing-ready resources — 
+                all in one place.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- ============================== -->
+    <!-- WHO WE ARE -->
+    <!-- ============================== -->
+    <section class="mb-14">
+        <h2 class="text-2xl font-bold mb-4 dark:text-white">Who We Are</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+            Amway Contribute is a community-driven initiative built for entrepreneurs 
+            who believe in creating impact through knowledge, design, and clarity. 
+            Our purpose is simple — make every Amway product easier to understand, 
+            visualize, and share.
+        </p>
+    </section>
+
+    <!-- ============================== -->
+    <!-- OUR MISSION -->
+    <!-- ============================== -->
+    <section class="mb-14">
+        <div class="p-8 rounded-[28px] bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h2 class="text-2xl font-bold mb-4 dark:text-white">Our Mission</h2>
+            <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                To provide clean, modern, and high-quality digital assets for every 
+                Amway product category. We aim to make sharing, explaining, and presenting 
+                products effortless — whether you're talking to customers, building your 
+                business online, or training your team.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- WHAT WE OFFER -->
+    <!-- ============================== -->
+    <section class="mb-14">
+        <h2 class="text-2xl font-bold mb-6 dark:text-white">What We Offer</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <!-- Card 1 -->
+            <div class="p-6 rounded-[20px] bg-white dark:bg-gray-900 shadow border border-gray-200 dark:border-gray-700">
+                <h3 class="text-xl font-semibold mb-2 dark:text-white">High-Quality Product Images</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Clean, consistent, and professionally optimized visuals for all Amway products.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="p-6 rounded-[20px] bg-white dark:bg-gray-900 shadow border border-gray-200 dark:border-gray-700">
+                <h3 class="text-xl font-semibold mb-2 dark:text-white">Product Insights & Details</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Clear explanations of benefits, usage, and features to make conversations easier.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="p-6 rounded-[20px] bg-white dark:bg-gray-900 shadow border border-gray-200 dark:border-gray-700">
+                <h3 class="text-xl font-semibold mb-2 dark:text-white">Category-Wise Browsing</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Explore Nutrition, Beauty, Personal Care, and more — all through a beautiful UI.
+                </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="p-6 rounded-[20px] bg-white dark:bg-gray-900 shadow border border-gray-200 dark:border-gray-700">
+                <h3 class="text-xl font-semibold mb-2 dark:text-white">Fast Downloads</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Download high-resolution product ZIP files instantly.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TEAM OR CREATOR SECTION -->
+    <!-- ============================== -->
+    <section class="mb-14">
+        <h2 class="text-2xl font-bold mb-4 dark:text-white">The Creator</h2>
+
+        <div class="rounded-[28px] p-8 bg-white dark:bg-gray-900 shadow border border-gray-200 dark:border-gray-700">
+            <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                This platform was crafted with precision, passion, and dedication by Sagar —
+                focusing on premium design, smooth user experience, and clean functionality.
+                The vision is to help Amway business owners save time, present better, and 
+                build stronger digital presence.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- CONTACT -->
+    <!-- ============================== -->
+    <section class="mb-20 text-center">
+        <h2 class="text-xl font-bold mb-4 dark:text-white">Get in Touch</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Have suggestions or need extra features?
+        </p>
+        <a href="mailto:sagarhirulkar689@gmail.com"
+           class="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">
+            Contact Us
+        </a>
+    </section>
+
+</div>
+{% endblock %}

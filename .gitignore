@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE Stuff
+.vscode/
+.idea/
+
+# Environment variables
+.env
+*.env
+.env.local
+
+# Node (if using Tailwind CLI)
+node_modules/
+
+# Build
+dist/
+build/

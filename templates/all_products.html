@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}All Products | Amway Contribute{% endblock %}
+
+{% block content %}
+
+<!-- ======================================================== -->
+<!-- ⭐ GEN-Z FLOATING HEADER -->
+<!-- ======================================================== -->
+<div class="relative w-full mb-10 rounded-[32px] overflow-hidden">
+
+    <!-- Background Image Blur -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/amway_banner.jpg' %}"
+             class="w-full h-full object-cover blur-xl opacity-40 scale-110">
+    </div>
+
+    <!-- Animated Gradient Overlay -->
+    <div class="absolute inset-0 animate-gradientFlow 
+        bg-[radial-gradient(circle_at_top_left,rgba(255,0,200,0.4),transparent_60%),
+           radial-gradient(circle_at_bottom_right,rgba(0,200,255,0.4),transparent_60%)]
+        dark:bg-[radial-gradient(circle_at_top_left,rgba(255,0,200,0.25),transparent_70%),
+           radial-gradient(circle_at_bottom_right,rgba(0,200,255,0.25),transparent_70%)]">
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="relative z-20 px-8 py-16 sm:px-12 sm:py-24 text-center">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold 
+                   text-gray-900 dark:text-white drop-shadow-xl mb-3">
+            All Products
+        </h1>
+
+        <p class="text-gray-800 dark:text-gray-200 text-lg max-w-2xl mx-auto">
+            Browse our complete catalog of premium Amway wellness, beauty & lifestyle essentials.
+        </p>
+    </div>
+</div>
+
+
+<!-- ======================================================== -->
+<!-- ⭐ PRODUCT GRID (GEN-Z STYLE) -->
+<!-- ======================================================== -->
+
+<div id="products"
+     class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+
+    {% for product in products %}
+    <a href="{% url 'gallery:product_detail' product.slug %}"
+       class="group relative block bg-white dark:bg-gray-900 
+              rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 
+              border border-gray-200 dark:border-gray-700 transition-all duration-300 p-4">
+
+        <!-- IMAGE CARD -->
+        <div class="w-full h-40 sm:h-44 bg-white dark:bg-gray-800 rounded-xl
+                    overflow-hidden flex items-center justify-center relative">
+
+            <!-- Glow Behind Product -->
+            <div class="absolute w-24 h-24 sm:w-32 sm:h-32 bg-blue-500/20 dark:bg-blue-400/10 
+                        blur-2xl rounded-full transition-all duration-300 group-hover:scale-150">
+            </div>
+
+            {% with img=product.productimage_set.first %}
+                {% if img %}
+                <img src="{{ img.image.url }}"
+                     class="relative z-10 max-w-full max-h-full object-contain 
+                            drop-shadow-xl transition-transform duration-300 group-hover:scale-110">
+                {% elif product.image %}
+                <img src="{{ product.image.url }}"
+                     class="relative z-10 max-w-full max-h-full object-contain 
+                            drop-shadow-xl transition-transform duration-300 group-hover:scale-110">
+                {% else %}
+                <div class="w-full h-full bg-gray-200 dark:bg-gray-700"></div>
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <!-- TITLE -->
+        <p class="mt-4 font-semibold line-clamp-2 text-gray-900 dark:text-gray-200 text-sm sm:text-base">
+            {{ product.name }}
+        </p>
+
+        {% if product.brand %}
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ product.brand.name }}</p>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+
+
+<!-- ======================================================== -->
+<!-- ⭐ PARTICLE EFFECT STYLES -->
+<!-- ======================================================== -->
+<style>
+@keyframes floatParticle {
+    0% { transform: translateY(0) scale(1); opacity: 0.4; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 0.8; }
+    100% { transform: translateY(0) scale(1); opacity: 0.4; }
+}
+
+.particle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: floatParticle 4s infinite ease-in-out;
+}
+
+.particle:nth-child(1) { top: 20%; left: 12%; animation-duration: 5s; }
+.particle:nth-child(2) { top: 65%; left: 30%; animation-duration: 6s; }
+.particle:nth-child(3) { top: 40%; left: 70%; animation-duration: 7s; }
+.particle:nth-child(4) { top: 80%; left: 50%; animation-duration: 5.5s; }
+
+@keyframes gradientFlow {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-gradientFlow {
+    animation: gradientFlow 8s ease-in-out infinite;
+}
+</style>
+
+{% endblock %}
