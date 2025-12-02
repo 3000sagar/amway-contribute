@@ -60,7 +60,7 @@ A modern, Gen-Z inspired Django web application designed to explore, browse, and
 ## 🔧 Installation
 
 ```bash
-git clone https://github.com/sagarrrrrrrr/amway-contribute.git
+git clone https://github.com/3000sagar/amway-contribute.git
 cd amway-contribute
 
 python -m venv venv
@@ -69,3 +69,4 @@ source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
+
