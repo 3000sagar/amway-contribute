@@ -6,7 +6,6 @@ from .models import Product
 from .models import ProductImage
 
 
-
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
 

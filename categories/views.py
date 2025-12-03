@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Category
 from brands.models import Brand
 from gallery.models import Product, ProductImage
-
+from django.db.models import Q
 
 # HOME PAGE
 def category_list(request):
@@ -46,6 +46,50 @@ def category_list(request):
         "slides": slides,
     })
 
+def first_image_url(product):
+    """Return first related image or fallback product.image."""
+    img = product.images.first()
+    if img:
+        try:
+            return img.image.url
+        except:
+            pass
+
+    if product.image:
+        try:
+            return product.image.url
+        except:
+            pass
+
+    return None
+
+
+def search(request):
+    query = (request.GET.get("q") or "").strip()
+
+    results = []
+
+    if query:
+        qs = Product.objects.filter(
+            Q(name__icontains=query) |
+            Q(slug__icontains=query) |
+            Q(description__icontains=query) |
+            Q(category__name__icontains=query) |
+            Q(brand__name__icontains=query)
+        ).distinct()
+
+        for p in qs:
+            results.append({
+                "obj": p,
+                "name": p.name,
+                "snippet": (p.description[:150] + "...") if p.description else "",
+                "image": first_image_url(p),
+            })
+
+    return render(request, "search.html", {
+        "query": query,
+        "results": results,
+    })
 def all_products(request):
     products = Product.objects.all().order_by("name")
     return render(request, "all_products.html", {"products": products})
